@@ -191,11 +191,11 @@ echo -e "\e[35m
 ╚═╝░░╚═╝░░╚═╝░░  ╚═╝╚═╝░░╚══╝╚═════╝░░░░╚═╝░░░╚═╝░░╚═╝╚══════╝╚══════╝\n\e[0m"
 
 echo -e "\033[1;35m"
-git clone https://github.com/diegojadibot/SakuraBotLite-MD.git
+git clone https://github.com/sinombre913/NigromanteBot_v2-MD.git
 echo -e "\033[01;32m\033[01mLa clonación se ha descargado e instalado correctamente.\nThe clone has been downloaded and installed successfully.\n\033[0m"
 
 echo -e "\033[01;32m\033[01mCambiando al directorio del repositorio!!\nChanging to the repository directory!!\n\033[0m" 
-cd SakuraBotLite-MD
+cd NigromanteBot_v2-MD
 
 echo -e "\e[36m
 ██╗░░░██╗██████╗░██████╗░░█████╗░████████╗███████╗  ██╗░░░██╗░█████╗░██████╗░███╗░░██╗
@@ -238,7 +238,7 @@ v1="${b}\033[32m"
 b="\033[0m"
 
 menu() {
-        #SakuraBotLite-MD
+        #NigromanteBot_v2-MD
         echo -e "${v1} MENÚ DE CONFIGURACIÓN"
         printf "\n"
         printf "${v1}[${b}01${v1}]${v} Visistar Grupo de Actualizaciones\n"
@@ -295,12 +295,6 @@ echo -e "\e[36m
 ░█▄▄█ ░█▄▄▀ ░█▀▀▀ ░█▀▀▀ ░█▀▀▀ ░█▄▄▀ ░█▀▀▀ ░█░█░█ ░█─── ░█─ ░█▄▄█ 
 ░█─── ░█─░█ ░█▄▄▄ ░█─── ░█▄▄▄ ░█─░█ ░█▄▄▄ ░█──▀█ ░█▄▄█ ▄█▄ ░█─░█
 
-╭━━━╮╱╱╱╱╭╮╱╱╱╱╱╱╱╱╱╱╱╱╱╭━━╮╱╱╱╱╱╱╭╮╱╭╮╱╱╱╱╱╱╭╮╱╱╱╱╱
-┃╭━╮┃╱╱╱╱┃┃╱╱╱╱╱╱╱╱╱╱╱╱╱┃╭╮┃╱╱╱╱╱╭╯╰╮┃┃╱╱╱╱╱╭╯╰╮╱╱╱╱
-┃╰━━╮╭━━╮┃┃╭╮╭╮╭╮╭━╮╭━━╮┃╰╯╰╮╭━━╮╰╮╭╯┃┃╱╱╱╭╮╰╮╭╯╭━━╮
-╰━━╮┃┃╭╮┃┃╰╯╯┃┃┃┃┃╭╯┃╭╮┃┃╭━╮┃┃╭╮┃╱┃┃╱┃┃╱╭╮┣┫╱┃┃╱┃┃━┫
-┃╰━╯┃┃╭╮┃┃╭╮╮┃╰╯┃┃┃╱┃╭╮┃┃╰━╯┃┃╰╯┃╱┃╰╮┃╰━╯┃┃┃╱┃╰╮┃┃━┫
-╰━━━╯╰╯╰╯╰╯╰╯╰━━╯╰╯╱╰╯╰╯╰━━━╯╰━━╯╱╰━╯╰━━━╯╰╯╱╰━╯╰━━╯
 ╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱
 ╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱\n\e[0m"
 

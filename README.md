@@ -1,7 +1,7 @@
->💖🌹𝗖𝗿𝗲𝗮𝗱𝗼𝗿: sinombre913🌻
+>𝗖𝗿𝗲𝗮𝗱𝗼𝗿: sinombre913
 
 
-## `🌻𝕾𝖆𝖐𝖚𝖗𝖆-𝕭𝖔𝖙-𝕷𝖎𝖙𝖊-𝕸𝕯✨` 
+## `⸽⃕𝕹𝖎𝖌𝖗𝖔𝖒𝖆𝖓𝖙𝖊𝕭𝖔𝖙-𝕸𝕯⃨፝⃕✰✨` 
 <p align="center">
 <img src="https://telegra.ph/file/8ade574d21b6da82692fa.jpg" alt="SakuraBotLite-MD" width="900"/>
 </p>
@@ -9,9 +9,9 @@
 
 
 
-### `—◉ 🤖𝑺𝒂𝒌𝒖𝒓𝒂𝑩𝒐𝒕𝑳𝒊𝒕𝒆 𝑩𝒐𝒕 𝑶𝒇𝒊𝒄𝒊𝒂𝒍🤖`
+### `—◉ 🤖 𝑩𝒐𝒕 𝑶𝒇𝒊𝒄𝒊𝒂𝒍🤖`
 
-<a href="https://api.whatsapp.com/send/?phone=51935499065&text=/estado&type=phone_number&app_absent=0" target="blank"><img src="https://img.shields.io/badge/Bot_Oficial_1-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
+<a href="https://api.whatsapp.com/send/?phone=51935499065&text=/estado&type=phone_number&app_absent=0" target="blank"><img src="https://img.shields.io/badge/⸽⃕𝕹𝖎𝖌𝖗𝖔𝖒𝖆𝖓𝖙𝖊𝕭𝖔𝖙-𝕸𝕯⃨፝⃕✰-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
 
  > NO SPAMEAR COMANDOS
 
@@ -31,7 +31,7 @@
   
 ### `✵ ✨𝑰𝒏𝒔𝒕𝒂𝒍𝒂𝒓 𝑷𝒐𝒓 𝑹𝒆𝒏𝒅𝒆𝒓🌻`
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://dashboard.render.com/blueprint/new?repo=https%3A%2F%2Fgithub.com%2diegojadibot%2FSakuraBotLite-MD) 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://dashboard.render.com/blueprint/new?repo=https%3A%2F%2Fgithub.com%2sinombre913%2FNigromanteBot_v2-MD) 
 
 ### `🌻𝑰𝒏𝒔𝒕𝒂𝒍𝒂𝒄𝒊𝒐𝒏 𝑷𝒐𝒓 𝑪𝒐𝒅𝒆 𝑺𝒑𝒂𝒄𝒆✨`
 
@@ -44,7 +44,7 @@ termux-setup-storage
 ```
 
 ```bash
-apt update -y && yes | apt upgrade && pkg install -y bash wget mpv && wget -O - https://raw.githubusercontent.com/diegojadibot/SakuraBotLite-MD/master/sakura.sh | bash
+apt update -y && yes | apt upgrade && pkg install -y bash wget mpv && wget -O - https://raw.githubusercontent.com/sinombre913/NigromanteBot_v2-MD/master/nigromante.sh | bash
 ```
 
 ### `✵ 🌻𝑰𝒏𝒔𝒕𝒂𝒍𝒂𝒄𝒊𝒐𝒏 𝑷𝒐𝒓 𝑻𝒆𝒓𝒎𝒖𝒙 𝑴𝒂𝒏𝒖𝒂𝒍👨‍💻` 
@@ -62,7 +62,7 @@ pkg install -y git nodejs ffmpeg imagemagick && pkg install yarn
 ```
 
 ```bash
-git clone https://github.com/diegojadibot/SakuraBotLite-MD.git && cd SakuraBotLite-MD
+git clone https://github.com/sinombre913/NigromanteBot_v2-MD.git && cd NigromanteBot_v2-MD
 ```
 
 ```bash
@@ -85,7 +85,7 @@ npm start
 ```bash
 ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
 > cd 
-> cd SakuraBotLite-MD
+> cd NigromanteBot_v2-MD
 > npm start
 ```
 
@@ -93,13 +93,13 @@ ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
 ```bash
 ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
 > cd 
-> rm -rf SakuraBotSession
+> rm -rf nigromanteSession
 > npm start
 ```
 
 
  ### `✵ 🌻𝑫𝒖𝒅𝒂 𝑫𝒆𝒍 𝑩𝒐𝒕? 𝑬𝒔𝒄𝒓𝒊𝒃𝒆𝒎𝒆✨`
-<a href="http://wa.me/573004826011" target="blank"><img src="https://img.shields.io/badge/Diego_Creador-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
+<a href="http://wa.me/5213331199136" target="blank"><img src="https://img.shields.io/badge/Creador-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
 
 ### `✵ 📄✦𝑨𝒔𝒊𝒔𝒕𝒆𝒏𝒄𝒊𝒂✦📄`
 <a href="http://wa.me/5213339577315" target="blank"><img src="https://img.shields.io/badge/Asistencia-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />

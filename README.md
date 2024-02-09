@@ -12,7 +12,7 @@
 
 ### `—◉ 🤖 𝑩𝒐𝒕 𝑶𝒇𝒊𝒄𝒊𝒂𝒍🤖`
 
-<a href="https://api.whatsapp.com/send/?phone=51935499065&text=/estado&type=phone_number&app_absent=0" target="blank"><img src="https://img.shields.io/badge/⸽⃕𝕹𝖎𝖌𝖗𝖔𝖒𝖆𝖓𝖙𝖊𝕭𝖔𝖙-𝕸𝕯⃨፝⃕✰-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
+<a href="https://api.whatsapp.com/send/?phone=51935499065&text=/estado&type=phone_number&app_absent=0" target="blank"><img src="https://img.shields.io/badge/Nigromante-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
 
  > NO SPAMEAR COMANDOS
 

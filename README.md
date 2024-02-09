@@ -23,7 +23,7 @@
   
 ### `✵ 🌻𝑰𝒏𝒔𝒕𝒂𝒍𝒂𝒓𝒍𝒐 𝑷𝒐𝒓 𝑲𝒐𝒚𝒆𝒃✨`
 
-[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=https://github.com/sinombre913/NigromanteBot_v2-MD &branch=master&name=NigromanteBot)
+[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=https://github.com/sinombre913/NigromanteBot_v2-MD&branch=master&name=NigromanteBot_v2-MD)
   
 ### `✵ ✨𝑰𝒏𝒔𝒕𝒂𝒍𝒂𝒓 𝑷𝒐𝒓 𝑹𝒆𝒑𝒍𝒊𝒕🌻`
 

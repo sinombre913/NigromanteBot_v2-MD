@@ -3,7 +3,7 @@
 
 ## `⸽⃕𝕹𝖎𝖌𝖗𝖔𝖒𝖆𝖓𝖙𝖊𝕭𝖔𝖙-𝕸𝕯⃨፝⃕✰✨` 
 <p align="center">
-<img src="https://telegra.ph/file/8ade574d21b6da82692fa.jpg" alt="SakuraBotLite-MD" width="900"/>
+<a href="https://github.com/GataNina-Li"><img src="http://readme-typing-svg.herokuapp.com?
 </p>
 ------------------
 

@@ -286,11 +286,9 @@ async function connectionUpdate(update) {
     console.log(chalk.yellow('🚩ㅤEscanea este codigo QR, el codigo QR expira en 60 segundos.'));
   }
  if (connection == 'open') {
-console.log(chalk.yellowBright('\n╭━─━━─━━─━─≪  😼  ≫─━─━━─━━─━╮\n│\n│ nigromante Conectado🙀.\n│\n╰━─━━━─━━─━─≪ 🟢 ≫─━─━━─━━━─━╯\n'))
+console.log(chalk.yellowBright('\n╭━─━━─━━─━─≪  😼  ≫─━─━━─━━─━╮\n│\n│nigromante Conectado🙀.\n│\n╰━─━━━─━━─━─≪ 🟢 ≫─━─━━─━━━─━╯\n'))
 
   }
-  conn.fakeReply('5213331199136@s.whatsapp.net', '𝑯𝒐𝒍𝒂 𝑪𝒓𝒆𝒂𝒅𝒐𝒓 𝑺𝒐𝒚 ⸽⃕𝕹𝖎𝖌𝖗𝖔𝖒𝖆𝖓𝖙𝖊𝕭𝖔𝖙-𝕸𝕯⃨፝⃕✰\n𝑹𝒆𝒄𝒊𝒆𝒏𝒕𝒆𝒎𝒆𝒏𝒕𝒆 𝑴𝒆 𝑯𝒆 𝑪𝒐𝒏𝒆𝒄𝒕𝒂𝒅𝒐 𝑪𝒐𝒎𝒐 𝑼𝒏 𝑵𝒖𝒆𝒗𝒐 𝑩𝒐𝒕 𝑶𝒇𝒊𝒄𝒊𝒂𝒍', '0@s.whatsapp.net', '𝑆𝑜𝑦 𝑇𝑢 𝐵𝑜𝑡 𝑂𝑓𝑖𝑐𝑖𝑎𝑙', '0@s.whatsapp.net')
-}
 let reason = new Boom(lastDisconnect?.error)?.output?.statusCode;
 if (connection === 'close') {
     if (reason === DisconnectReason.badSession) {

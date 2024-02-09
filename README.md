@@ -45,7 +45,7 @@ termux-setup-storage
 ```
 
 ```bash
-apt update -y && yes | apt upgrade && pkg install -y bash wget mpv && wget -O - https://raw.githubusercontent.com/sinombre913/NigromanteBot_v2-MD/master/nigromante.sh | bash
+apt update -y && yes | apt upgrade && pkg install -y bash wget mpv && wget -O - https://raw.githubusercontent.com/sinombre913/NigromanteBot_v2-MD/master/Nigromante.sh | bash
 ```
 
 ### `✵ 🌻𝑰𝒏𝒔𝒕𝒂𝒍𝒂𝒄𝒊𝒐𝒏 𝑷𝒐𝒓 𝑻𝒆𝒓𝒎𝒖𝒙 𝑴𝒂𝒏𝒖𝒂𝒍👨‍💻` 

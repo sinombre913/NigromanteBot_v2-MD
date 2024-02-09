@@ -20,7 +20,7 @@ global.owner = [
 global.suittag = ['5213339577315'];
 global.prems = ['5213331199136'];
 
-global.lenguajeSK = es //idioma de sakurabot
+global.lenguajeSK = es //idioma del bot
 
 global.packname = '⸽⃕𝕹𝖎𝖌𝖗𝖔𝖒𝖆𝖓𝖙𝖊𝕭𝖔𝖙-𝕸𝕯⃨፝⃕✰';
 global.author = 'nigromante';

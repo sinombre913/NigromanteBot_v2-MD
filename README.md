@@ -7,8 +7,8 @@
 <img src="https://acegif.com/wp-content/gif/outerspace-51.gif" width="400" height="230"/>
 </p>
 ------------------
-
-
+Yo sinombre913 Me Retiro Del Bot En Algún Momento Este Bot Ya No Servirá 
+------------------
 
 ### `🤖 𝑩𝒐𝒕 𝑶𝒇𝒊𝒄𝒊𝒂𝒍🤖`
 

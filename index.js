@@ -1,4 +1,4 @@
-console.log('✅ㅤIniciando...');
+console.log('🚀ㅤIniciando...');
 import {join, dirname} from 'path';
 import {createRequire} from 'module';
 import {fileURLToPath} from 'url';
@@ -13,11 +13,11 @@ const {name, author} = require(join(__dirname, './package.json'));
 const {say} = cfonts;
 const rl = createInterface(process.stdin, process.stdout);
 
-say('Nigromante\nBot MD', {
+say('Nigromante\nBot\nMD', {
   font: 'chrome',
   align: 'center',
   gradient: ['red', 'magenta']});
-say(`Bot creado por sinombre913`, {
+say(`Bot Creado Por sinombre913`, {
   font: 'console',
   align: 'center',
   gradient: ['red', 'magenta']});

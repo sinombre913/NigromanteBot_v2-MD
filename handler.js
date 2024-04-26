@@ -94,6 +94,7 @@ export async function handler(chatUpdate) {
         if (!isNumber(user.afk)) user.afk = -1;
                 if (!('autolevelup' in user)) user.autolevelup = true;
                 if (!('role' in user)) user.role = 'Novato';
+        if (!('muto' in user)) user.muto = false
         if (!isNumber(user.agility)) user.agility = 0;
         if (!isNumber(user.anakanjing)) user.anakanjing = 0;
         if (!isNumber(user.anakcentaur)) user.anakcentaur = 0;
@@ -138,6 +139,8 @@ export async function handler(chatUpdate) {
         if (!isNumber(user.bawal)) user.bawal = 0;
         if (!isNumber(user.bawalbakar)) user.bawalbakar = 0;
         if (!isNumber(user.bayam)) user.bayam = 0;
+        if (!isNumber(user.juegos)) user.juegos = 0;
+        if (!isNumber(user.crime)) user.crime = 0;
         if (!isNumber(user.berlian)) user.berlian = 10;
         if (!isNumber(user.bibitanggur)) user.bibitanggur = 0;
         if (!isNumber(user.bibitapel)) user.bibitapel = 0;
@@ -501,6 +504,7 @@ export async function handler(chatUpdate) {
           afkReason: '',
           age: -1,
           agility: 16,
+          muto: false,
           anakanjing: 0,
           anakcentaur: 0,
           anakgriffin: 0,
@@ -932,52 +936,56 @@ export async function handler(chatUpdate) {
       }
       if (chat) {
         if (!('isBanned' in chat)) chat.isBanned = false;
-        if (!('welcome' in chat)) chat.welcome = false;
-        if (!('detect' in chat)) chat.detect = false;
-        if (!('detect2' in chat)) chat.detect2 = true;
+        if (!('welcome' in chat)) chat.welcome = true;
+        if (!('detect' in chat)) chat.detect = true;
+        if (!('detect2' in chat)) chat.detect2 = false;
         if (!('sWelcome' in chat)) chat.sWelcome = '';
         if (!('sBye' in chat)) chat.sBye = '';
         if (!('sPromote' in chat)) chat.sPromote = '';
         if (!('sDemote' in chat)) chat.sDemote = '';
-        if (!('delete' in chat)) chat.antidelete = false;
+        if (!('delete' in chat)) chat.antidelete = true;
         if (!('modohorny' in chat)) chat.modohorny = false;
+        if (!('reaction' in chat)) chat.reaction = true;
         if (!('autosticker' in chat)) chat.autosticker = false;
-        if (!('audios' in chat)) chat.audios = false;
+        if (!('audios' in chat)) chat.audios = true;
         if (!('antiLink' in chat)) chat.antiLink = true;
         if (!('antiLink2' in chat)) chat.antiLink2 = false;
         if (!('antiviewonce' in chat)) chat.antiviewonce = true;
-        if (!('antiToxic' in chat)) chat.antiToxic = false;
+        if (!('antiToxic' in chat)) chat.antiToxic = true;
         if (!('antiTraba' in chat)) chat.antiTraba = false;
         if (!('antiArab' in chat)) chat.antiArab = false;
         if (!('antiArab2' in chat)) chat.antiArab2 = false;
         if (!('antiporno' in chat)) chat.antiporno = false;
+        if (!('game' in chat)) chat.game = false;
         if (!('modoadmin' in chat)) chat.modoadmin = false;
         if (!('simi' in chat)) chat.simi = false;
         if (!isNumber(chat.expired)) chat.expired = 0;
       } else {
         global.db.data.chats[m.chat] = {
           isBanned: false,
-          welcome: false,
-          detect: false,
-          detect2: true,
+          welcome: true,
+          detect: true,
+          detect2: false,
           sWelcome: '',
           sBye: '',
           sPromote: '',
           sDemote: '',
-          antidelete: false,
+          antidelete: true,
           modohorny: false,
+          reaction: true,
           autosticker: false,
-          audios: false,
+          audios: true,
           antiLink: true,
           antiLink2: false,
           antiviewonce: true,
-          antiToxic: false,
+          antiToxic: true,
           antiTraba: false,
           antiArab: false,
           antiArab2: false,
           antiporno: false,
           modoadmin: false,
           simi: false,
+          game: false,
           expired: 0,
         };
       }
@@ -985,26 +993,26 @@ export async function handler(chatUpdate) {
       if (typeof settings !== 'object') global.db.data.settings[this.user.jid] = {};
       if (settings) {
         if (!('self' in settings)) settings.self = false;
-        if (!('autoread' in settings)) settings.autoread = true;
-        if (!('autoread2' in settings)) settings.autoread2 = true;
-        if (!('restrict' in settings)) settings.restrict = true;
+        if (!('autoread' in settings)) settings.autoread = false;
+        if (!('autoread2' in settings)) settings.autoread2 = false;
+        if (!('restrict' in settings)) settings.restrict = false;
         if (!('antiCall' in settings)) settings.antiCall = true;
         if (!('antiPrivate' in settings)) settings.antiPrivate = false;
         if (!('modejadibot' in settings)) settings.modejadibot = false;
-        if (!('antispam' in settings)) settings.antispam = true;
-        if (!('audios_bot' in settings)) settings.audios_bot = false;  
+        if (!('antispam' in settings)) settings.antispam = false;
+        if (!('audios_bot' in settings)) settings.audios_bot = true;  
         if (!('modoia' in settings)) settings.modoia = false;      
       } else {
         global.db.data.settings[this.user.jid] = {
           self: false,
-          autoread: true,
-          autoread2: true,
-          restrict: true,
+          autoread: false,
+          autoread2: false,
+          restrict: false,
           antiCall: true,
           antiPrivate: false,
           modejadibot: true,
-          antispam: true,
-          audios_bot: false,
+          antispam: false,
+          audios_bot: true,
           modoia: false
         };
       }
@@ -1179,13 +1187,14 @@ export async function handler(chatUpdate) {
             if (user.bannedMessageCount < 3) {
               const messageNumber = user.bannedMessageCount + 1;
 const messageText = `
-╔═════════════════════╗
- ❰ 🚫 ❱ *¡••𝑈𝑠𝑎𝑟𝑖𝑜 𝐵𝑎𝑛𝑒𝑎𝑑𝑜••* ❰ 🚫 ❱
-—𝑨𝒗𝒊𝒔𝒐  ${messageNumber}/𝑻𝒐𝒕𝒂𝒍: 3)*
-—◉ ${user.bannedReason ? `\n*𝑴𝒐𝒕𝒊𝒗𝒐:* ${user.bannedReason}` : '*𝑴𝒐𝒕𝒊𝒗𝒐:*𝑆𝑖𝑛 𝐸𝑠𝑝𝑒𝑐𝑖𝑓𝑖𝑐𝑎𝑟'}
-—◉ *𝘚𝘪 𝘊𝘰𝘯𝘴𝘪𝘥𝘦𝘳𝘢𝘴 𝘘𝘶𝘦 𝘌𝘴 𝘜𝘯 𝘌𝘳𝘳𝘰𝘳 𝘠 𝘚𝘪 𝘛𝘪𝘦𝘯𝘦𝘴 𝘗𝘳𝘶𝘦𝘣𝘢𝘴, 𝘗𝘶𝘦𝘥𝘦𝘴 𝘊𝘰𝘮𝘶𝘯𝘪𝘤𝘢𝘳𝘵𝘦 𝘊𝘰𝘯 𝘌𝘭 𝘖𝘸𝘯𝘦𝘳 𝘋𝘦𝘭 𝘉𝘰𝘵 𝘠 𝘈𝘱𝘦𝘭𝘢𝘳 𝘓𝘢 𝘚𝘶𝘴𝘱𝘦𝘯𝘴𝘪𝘰́𝘯.*
-—◉ *Iɴᴛᴇɴᴛᴀ Rᴇᴛɪʀᴀʀ Eʟ Bᴀɴᴇᴏ Aǫᴜɪ:* Wa.me/5213331199136
-╚═════════════════════╝
+╭━━━━━━━✦✗✦━━━━━━━━╮
+ 🚫 *Usuario Baneado* 🚫
+*Aviso*  ${messageNumber}/Total: 3)
+${user.bannedReason ? `\n*Motivo:* 
+${user.bannedReason}` : '*Motivo:* Sin Especificar'}
+_Si Consideras Que Es Un Error Y Si Tienes Pruebas, Puedes Comunicarte Con El Propietario Del Bot Y Apelar La Suspención._
+*Intenta Quitar El Baneo Aqui:* Wa.me/5213331199141
+╰━━━━━━━✦✗✦━━━━━━━━╯
                `.trim();
               m.reply(messageText);
               user.bannedMessageCount++;
@@ -1196,12 +1205,11 @@ const messageText = `
             }
             return;
           }
-
           if (botSpam.antispam && m.text && user && user.lastCommandTime && (Date.now() - user.lastCommandTime) < 30000 && !isROwner) {
             if (user.commandCount === 2) {
               const remainingTime = Math.ceil((user.lastCommandTime + 30000 - Date.now()) / 30000);
               if (remainingTime > 0) {
-                const messageText = `*[ ⏳ ] 𝘌𝘴𝘱𝘦𝘳𝘢 ${remainingTime} 𝘔𝘪𝘯𝘶𝘵𝘰 𝘗𝘢𝘳𝘢 𝘜𝘴𝘢𝘳 𝘖𝘵𝘳𝘰 𝘊𝘰𝘮𝘢𝘯𝘥𝘰*`;
+                const messageText = `*⏰️ Espera ${remainingTime} Segundos Para Utilizar Otro Comando*`;
                 m.reply(messageText);
                 return;
               } else {
@@ -1267,11 +1275,11 @@ const messageText = `
           m.exp += xp;
         }
         if (!isPrems && plugin.limit && global.db.data.users[m.sender].limit < plugin.limit * 1) {
-          mconn.conn.reply(m.chat, `*💎 t͓̽e͓̽ q͓̽u͓̽e͓̽d͓̽a͓̽s͓̽t͓̽e͓̽ s͓̽i͓̽n͓̽ d͓̽i͓̽a͓̽m͓̽a͓̽n͓̽t͓̽e͓̽s͓̽ p͓̽o͓̽b͓̽r͓̽e͓̽ u͓̽s͓̽a͓̽ e͓̽l͓̽ s͓̽i͓̽g͓̽u͓̽i͓̽e͓̽n͓̽t͓̽e͓̽ c͓̽o͓̽m͓̽a͓̽n͓̽d͓̽o͓̽ p͓̽a͓̽r͓̽a͓̽ c͓̽o͓̽m͓̽p͓̽r͓̽a͓̽r͓̽ d͓̽i͓̽a͓̽m͓̽a͓̽n͓̽t͓̽i͓̽t͓̽o͓̽s͓̽ ${usedPrefix}buyall*`, m);
+          mconn.conn.reply(m.chat, `*💎 Te As Quedado Sin Diamantes, Compra Dimantes Utilizando El Comando: ${usedPrefix}buyall*`, m);
           continue; 
         }
         if (plugin.level > _user.level) {
-          mconn.conn.reply(m.chat, `*🌹 𝐬𝐞 𝐫𝐞𝐪𝐮𝐢𝐞𝐫𝐞 𝐭𝐞𝐧𝐞𝐫 𝐞𝐥 𝐧𝐢𝐯𝐞𝐥 ${plugin.level} 𝐩𝐚𝐫𝐚 𝐩𝐨𝐝𝐞𝐫 𝐮𝐬𝐚𝐫 𝐞𝐬𝐭𝐞 𝐜𝐨𝐦𝐚𝐧𝐝𝐨. 𝐭𝐮 𝐧𝐢𝐯𝐞𝐥 𝐚𝐜𝐭𝐮𝐚𝐥 𝐞𝐬 ${_user.level}, 𝐮𝐬𝐚 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 ${usedPrefix} 𝐥𝐯𝐥 𝐩𝐚𝐫𝐚 𝐬𝐮𝐛𝐢𝐫 𝐝𝐞 𝐧𝐢𝐯𝐞𝐥 𝐜𝐨𝐧 𝐞𝐱𝐩.*`, m);
+          mconn.conn.reply(m.chat, `*Se Requiere Tener El Nivel ${plugin.level} Para Poder Utilizar El Comando. Tu Nivel Actual Es ${_user.level}, Usa El Comando: ${usedPrefix} lvl Para Subir De Nivel Con Exp.*`, m);
           continue; 
         }
         const extra = {
@@ -1308,7 +1316,7 @@ const messageText = `
           if (e) {
             let text = format(e);
             for (const key of Object.values(global.APIKeys)) {
-              text = text.replace(new RegExp(key, 'g'), '#HIDDEN#');
+              text = text.replace(new RegExp(key, 'g'), 'Administrador');
             }
             if (e.name) {
               /* for (const [jid] of global.reportes_solicitudes.filter(([number]) => number)) {
@@ -1340,7 +1348,7 @@ const messageText = `
             }
           }
           if (m.limit) {
-            m.reply('*[ 💎 ] 𝙨𝙚 𝙪𝙨𝙖𝙧𝙤𝙣 ' + +m.limit + ' 𝙙𝙞𝙖𝙢𝙖𝙣𝙩𝙚(𝙨) (𝙡𝙞𝙢𝙞𝙩𝙚𝙨).*');
+            m.reply('*Se Usaron ' + +m.limit + ' Diamante(s) (Limite).*');
           }
         }
         break;
@@ -1356,7 +1364,17 @@ const messageText = `
       }
     }
     let user; const stats = global.db.data.stats;
-    if (m) {
+    //if (m) {
+      if (m) { 
+        let utente = global.db.data.users[m.sender]
+if (utente.muto == true) {
+let bang = m.key.id
+let cancellazzione = m.key.participant
+await conn.sendMessage(m.chat, {
+delete: {
+remoteJid: m.chat, fromMe: false, id: bang, participant: cancellazzione
+}})
+}
       if (m.sender && (user = global.db.data.users[m.sender])) {
         user.exp += m.exp;
         user.limit -= m.limit * 1;
@@ -1404,8 +1422,14 @@ const messageText = `
     const settingsREAD = global.db.data.settings[mconn.conn.user.jid] || {};
     if (opts['autoread']) await mconn.conn.readMessages([m.key]);
     if (settingsREAD.autoread2) await mconn.conn.readMessages([m.key]);
-  }
+//if (settingsREAD.autoread2 == 'true') await this.readMessages([m.key]);
+
+ if (db.data.chats[m.chat].reaction && m.text.match(/(rahptalia)/gi)) {
+let emot = pickRandom(["😀"])
+if (!m.fromMe) return this.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 }
+function pickRandom(list) { return list[Math.floor(Math.random() * list.length)]}
+}}
 
 /**
  * Handle groups participants update
@@ -1500,8 +1524,8 @@ export async function callUpdate(callUpdate) {
         const callmsg = await mconn.conn.reply(nk.from, `𝙷𝚘𝚕𝚊 *@${nk.from.split('@')[0]}*, 𝚕𝚊𝚜 ${nk.isVideo ? '𝚟𝚒𝚍𝚎𝚘𝚕𝚕𝚊𝚖𝚊𝚍𝚊s' : '𝚕𝚕𝚊𝚖𝚊𝚍𝚊s'} 𝚗𝚘 𝚎𝚜𝚝𝚊́𝚗 𝚙𝚎𝚛𝚖𝚒𝚝𝚒𝚍𝚊𝚜, 𝚜𝚎𝚛𝚊́𝚜 𝚋𝚕𝚘𝚚𝚞𝚎𝚊𝚍𝚘.\n-\nSi accidentalmente llamaste póngase en contacto con mi creador para que te desbloquee!`, false, {mentions: [nk.from]});
         // let data = global.owner.filter(([id, isCreator]) => id && isCreator)
         // await this.sendContact(nk.from, data.map(([id, name]) => [id, name]), false, { quoted: callmsg })
-        const vcard = `BEGIN:VCARD\nVERSION:3.0\nN:;nigromante ✨;;;\nFN:nigromante  ✨\nORG:nigromante  ✨\nTITLE:\nitem1.TEL;waid=5213331199136\nitem1.X-ABLabel: nigromante ✨\nX-WA-BIZ-DESCRIPTION:[❗] ᴄᴏɴᴛᴀᴄᴛᴀ ᴀ ᴇsᴛᴇ ɴᴜᴍ ᴘᴀʀᴀ ᴄᴏsᴀs ɪᴍᴘᴏʀᴛᴀɴᴛᴇs.\nX-WA-BIZ-NAME:nigromante ✨\nEND:VCARD`;
-        await mconn.conn.sendMessage(nk.from, {contacts: {displayName: '✨️⸽⃕𝕹𝖎𝖌𝖗𝖔𝖒𝖆𝖓𝖙𝖊𝕭𝖔𝖙-𝕸𝕯🍁⃨፝⃕✰', contacts: [{vcard}]}}, {quoted: callmsg});
+        const vcard = `BEGIN:VCARD\nVERSION:3.0\nN:;Creador 🧸;;;\nFN:Creador 🧸\nORG:Creador 🧸\nTITLE:\nitem1.TEL;waid=573012482597:+57 301 2482597\nitem1.X-ABLabel:Creador 🧸Creador 🧸\nX-WA-BIZ-DESCRIPTION:ᴄᴏɴᴛᴀᴄᴛᴀ ᴀ ᴇsᴛᴇ ɴᴜᴍ ᴘᴀʀᴀ ᴄᴏsᴀs ɪᴍᴘᴏʀᴛᴀɴᴛᴇs.\nX-WA-BIZ-NAME:Creador 🧸\nEND:VCARD`;
+        await mconn.conn.sendMessage(nk.from, {contacts: {displayName: '𝘚𝘢𝘬𝘶𝘳𝘪𝘵𝘴𝘉𝘰𝘵 ✨', contacts: [{vcard}]}}, {quoted: callmsg});
         await mconn.conn.updateBlockStatus(nk.from, 'block');
       }
     }
@@ -1520,15 +1544,7 @@ let date = d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'nu
         if (!chat?.antidelete) return 
         if (!msg) return 
         if (!msg?.isGroup) return 
-                const antideleteMessage = `┏━━━━━━━⬣  𝘼𝙉𝙏𝙄 𝘿𝙀𝙇𝙀𝙏𝙀  ⬣━━━━━━━━
-  *🧢 𝙐𝙨𝙪𝙖𝙧𝙞𝙤:* @${participant.split`@`[0]}
-  *⏰ 𝑯𝒐𝒓𝒂:* ${time}
-  *🗓️ 𝑭𝒆𝒄𝒉𝒂:* ${date}
-  *⏳ 𝑬𝒏𝒗𝒊𝒂𝒏𝒅𝒐 𝒆𝒍 𝒎𝒆𝒏𝒔𝒂𝒋𝒆 𝒆𝒍𝒊𝒎𝒊𝒏𝒂𝒅𝒐...*
-      
-  *➡️ 𝑷𝒂𝒓𝒂 𝒅𝒆𝒔𝒂𝒄𝒕𝒊𝒗𝒂𝒓 𝒆𝒔𝒕𝒂 𝒇𝒖𝒏𝒄𝒊𝒐́𝒏, 𝒆𝒔𝒄𝒓𝒊𝒃𝒆 𝒆𝒍 𝒄𝒐𝒎𝒂𝒏𝒅𝒐:*
-  *✨ #disable antidelete*
-  ┗━━━━━━━⬣  𝘼𝙉𝙏𝙄 𝘿𝙀𝙇𝙀𝙏𝙀  ⬣━━━━━━━━`.trim();
+                const antideleteMessage = `┏━━━━⬣  𝘼𝙉𝙏𝙄 𝘿𝙀𝙇𝙀𝙏𝙀  ⬣━━━━⬣\n┃ *❏ Nombre:* @${participant.split`@`[0]}\n┃ *❏ Hora:* ${time}\n┃ *❏ Fecha:* ${date}\n┃ *❏ Enviando mensaje...*\n┗━━━━━━━━━━━━━━━━━⬣`.trim();
         await mconn.conn.sendMessage(msg.chat, {text: antideleteMessage, mentions: [participant]}, {quoted: msg})
         mconn.conn.copyNForward(msg.chat, msg).catch(e => console.log(e, msg))
     } catch (e) {
@@ -1538,19 +1554,19 @@ let date = d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'nu
 
 global.dfail = (type, m, conn) => {
   const msg = {
-    rowner: '*⚠️ 𝘌𝘴𝘵𝘦 𝘊𝘰𝘮𝘢𝘯𝘥𝘰 𝘚𝘰𝘭𝘰 𝘓𝘰 𝘗𝘶𝘦𝘥𝘦 𝘜𝘵𝘪𝘭𝘪𝘻𝘢𝘳 𝘌𝘭 𝘗𝘳𝘰𝘱𝘪𝘦𝘵𝘢𝘳𝘪𝘰 𝘋𝘦𝘭 𝘉𝘰𝘵.*',
-    owner: '*⚠️ 𝘌𝘴𝘵𝘦 𝘊𝘰𝘮𝘢𝘯𝘥𝘰 𝘚𝘰𝘭𝘰 𝘚𝘦 𝘗𝘶𝘦𝘥𝘦 𝘜𝘴𝘢𝘳 𝘗𝘰𝘳 𝘌𝘭 𝘗𝘳𝘰𝘱𝘪𝘦𝘵𝘢𝘳𝘪𝘰 𝘋𝘦𝘭 𝘉𝘰𝘵.*',
-    mods: '*⚠️ 𝘌𝘴𝘵𝘦 𝘊𝘰𝘮𝘢𝘯𝘥𝘰 𝘚𝘰𝘭𝘰 𝘚𝘦 𝘗𝘶𝘦𝘥𝘦 𝘜𝘴𝘢𝘳 𝘗𝘰𝘳 𝘌𝘭 𝘗𝘳𝘰𝘱𝘪𝘦𝘵𝘢𝘳𝘪𝘰 𝘋𝘦𝘭 𝘉𝘰𝘵.*',
-    premium: '*⚠️ 𝘌𝘴𝘵𝘦 𝘊𝘰𝘮𝘢𝘯𝘥𝘰 𝘚𝘰𝘭𝘰 𝘚𝘦 𝘗𝘶𝘦𝘥𝘦 𝘜𝘵𝘪𝘭𝘪𝘻𝘢𝘳 𝘗𝘰𝘳 𝘜𝘴𝘶𝘢𝘳𝘪𝘰𝘴 𝘗𝘳𝘦𝘮𝘪𝘶𝘮, 𝘠 𝘗𝘢𝘳𝘢 𝘔𝘪 𝘊𝘳𝘦𝘢𝘥𝘰𝘳.*',
-    group: '*⚠️ 𝘌𝘴𝘵𝘦 𝘊𝘰𝘮𝘢𝘯𝘥𝘰 𝘚𝘰𝘭𝘰 𝘚𝘦 𝘗𝘶𝘦𝘥𝘦 𝘜𝘴𝘢𝘳 𝘌𝘯 𝘎𝘳𝘶𝘱𝘰𝘴.*',
-    private: '*⚠️ 𝘌𝘴𝘵𝘦 𝘊𝘰𝘮𝘢𝘯𝘥𝘰 𝘚𝘰𝘭𝘰 𝘚𝘦 𝘗𝘶𝘦𝘥𝘦 𝘜𝘴𝘢𝘳 𝘈𝘭 𝘊𝘩𝘢𝘵 𝘗𝘳𝘪𝘷𝘢𝘥𝘰 𝘋𝘦𝘭 𝘉𝘰𝘵.*',
-    admin: '*⚠️ 𝘌𝘴𝘵𝘦 𝘊𝘰𝘮𝘢𝘯𝘥𝘰 𝘚𝘰𝘭𝘰 𝘌𝘴 𝘗𝘢𝘳𝘢 𝘈𝘥𝘮𝘪𝘯𝘴 𝘋𝘦𝘭 𝘎𝘳𝘶𝘱𝘰.*',
-    botAdmin: '*⚠️ 𝘗𝘢𝘳𝘢 𝘗𝘰𝘥𝘦𝘳 𝘜𝘴𝘢𝘳 𝘌𝘴𝘵𝘦 𝘊𝘰𝘮𝘢𝘯𝘥𝘰 𝘌𝘴 𝘕𝘦𝘤𝘦𝘴𝘢𝘳𝘪𝘰 𝘘𝘶𝘦 𝘠𝘰 𝘚𝘦𝘢 𝘈𝘥𝘮𝘪𝘯.*',
-    unreg: '*🪁¡𝐏𝐚𝐫𝐚 𝐂𝐨𝐧𝐭𝐢𝐧𝐮𝐚𝐫 𝐂𝐨𝐧 𝐄𝐬𝐭𝐚 𝐅𝐮𝐧𝐜𝐢𝐨𝐧 𝐄𝐬 𝐍𝐞𝐜𝐞𝐬𝐚𝐫𝐢𝐨 𝐑𝐞𝐠𝐢𝐬𝐭𝐫𝐚𝐫𝐬𝐞!*\n\n!reg nombre.edad\n\n*Uso correcto* : #reg nigromante.21',
-    restrict: '*⚠️ 𝘊𝘰𝘮𝘢𝘯𝘥𝘰 𝘙𝘦𝘴𝘵𝘳𝘪𝘯𝘨𝘪𝘥𝘰 𝘗𝘰𝘳 𝘋𝘦𝘴𝘪𝘤𝘪𝘰́𝘯 𝘋𝘦𝘭 𝘗𝘳𝘰𝘱𝘪𝘦𝘵𝘢𝘳𝘪𝘰 𝘋𝘦𝘭 𝘉𝘰𝘵.*',
+    rowner: '*¡Este Comando Es Exclusivo Para Mi Desarrollador!*',
+    owner: '*¡El Uso Del Comando Solo Lo Puede Usar Mi Desarrollador!*',
+    mods: '*¡Esta Función Solo Lo Puede Utilizar Mi Propietario!*',
+    premium: '*¡Esta Función Solo Se Puede Usar Por Los Usuarios Premium*',
+    group: '*¡Esta Función Solo Se Puede Usar En Grupos!*',
+    private: '*¡Esta Función Solo Se Puede Utilizar Al Chat Privado Del Bot!*',
+    admin: '*¡Esta Función Solo Se Puede Utilizar Por Un Admin Del Grupo!*',
+    botAdmin: '*!Para Poder Utilizar Este Comando Es Necesario Que El Bot Sea Admin!*',
+    unreg: '*¡Para Continuar Con Esta Función Es Necesario Registrarse!*\n\n!verificar nombre.edad\n\n*Uso Correcto* : !verificar Rahptalia.21',
+    restrict: '*!Esta Función Fué Deshabilitado Por Mi Desarrollador*',
     }[type];
   const aa = {quoted: m, userJid: conn.user.jid};
-  const prep = generateWAMessageFromContent(m.chat, {extendedTextMessage: {text: msg, contextInfo: {externalAdReply: {title: '⚠ 𝐴𝑉𝐼𝑆𝑂 - 𝐴𝐿𝐸𝑅𝑇𝐴', body: '⸽⃕𝕹𝖎𝖌𝖗𝖔𝖒𝖆𝖓𝖙𝖊𝕭𝖔𝖙-𝕸𝕯⃨፝⃕✰', thumbnail: imagen1, sourceUrl: 'https://whatsapp.com/channel/0029VaFOShR9mrGiarBG8m0q'}}}}, aa);
+  const prep = generateWAMessageFromContent(m.chat, {extendedTextMessage: {text: msg, contextInfo: {externalAdReply: {title: '!𝗛𝗼𝗹𝗮!!!', body: 'NigromanteBot-MD', thumbnail: imagen1, sourceUrl: 'https://whatsapp.com/channel/0029VaWcBCgCXC3NZU4GVA2c'}}}}, aa);
   if (msg) return conn.relayMessage(m.chat, prep.message, {messageId: prep.key.id});
 };
 
